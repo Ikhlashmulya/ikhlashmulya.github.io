@@ -3,6 +3,7 @@ title: Fetch Data CSV di Go-Lang
 type: page
 description: Click on me to see the content.
 topic: programming
+date: 2023-03-15T11:30:03+00:00
 ---
 
 ### Membaca data dari csv
