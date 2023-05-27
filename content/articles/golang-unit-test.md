@@ -105,7 +105,7 @@ func TestSubTest(t *testing.T) {
     	result := HelloWorld()
     	require.Equal(t, "Hello World", result, "Result must be 'Hello World'")
     })
-    t.Run("mulya", func(t *testing.T) {
+    t.Run("nama subtest2", func(t *testing.T) {
     	result := HelloWorld()
         require.Equal(t, "Hello World", result, "Result must be 'Hello World'")
     })
@@ -139,8 +139,8 @@ func TestTableTest(t *testing.T) {
 
     for _, test := range tests {
         t.Run(test.name, func(t *testing.T) {
-    	    result := SayHello(test.request)
-    	    require.Equal(t, test.expected , result, "Result must be 'Hello Ikhlash'")
+    	    result := DisplayNumber(test.request)
+    	    require.Equal(t, test.expected , result, "Result must be " + test.expected)
         })
     }
 }
