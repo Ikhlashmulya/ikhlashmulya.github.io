@@ -6,7 +6,7 @@
     <section class="entry-content">
         <p>{{ .SelfDescription | markdownify }}</p>
     </section>
-    <img src="/images/profile.png" class="profilepic">
+    <img src="{{ site.Params.profileMode.imageUrl }}" class="profilepic">
     <section class="entry-content">
         <p>{{ .Content | markdownify }}</p>
     </section>

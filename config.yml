@@ -1,9 +1,7 @@
-baseURL: # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+baseURL: https://ikhlashmulya.github.io/ # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
 title: Ikhlashmulya
 paginate: 5
 theme: charlola
-
-
 
 menu:
     main:
@@ -16,20 +14,11 @@ menu:
         - name: Projects
           url: /projects/
           weight: 15
-
-     # - name: Categories
-        #   url: /categories/
-        #   weight: 10
-        # - name: new Tab
-        #   url: /newtab/
-        #   weight: defines order of tabs
    
 
 
 params:
     author: Ikhlash Mulyanurahman
-
-
     defaultTheme: auto
     # disableThemeToggle: true
     ShowShareButtons: true
@@ -85,8 +74,6 @@ params:
           favicon32x32: "/images/favicon-32x32.png"
           apple_touch_icon: "/images/apple-touch-icon.png"
           safari_pinned_tab: "/images/apple-touch-icon.png"
-
-
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
