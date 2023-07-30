@@ -9,7 +9,7 @@ date: 2023-03-15T11:30:03+00:00
 ### Membaca data dari csv
 Untuk membaca data CSV di Golang, bisa menggunakan package standar `encoding/csv` yang sudah disediakan oleh Go. Berikut ini adalah contoh kode untuk membaca file CSV :
 
-```
+```go
 package main
 
 import (
@@ -48,7 +48,7 @@ Pembahasan potongan kode :
 
 - Membuka file
 
-```
+```go
 file, err := os.Open("data.csv")
 if err != nil {
 	log.Fatal(err)
@@ -59,7 +59,7 @@ defer file.Close()
 potongan kode di atas adalah untuk membuka file csv yang akan dibaca. Untuk membuka file menggunakan fungsi open dari package os
 
 - Membuat reader csv
-```
+```go
 reader := csv.NewReader(file)
 reader.Comma = ','
 ```
@@ -68,7 +68,7 @@ Untuk membuat reader csv gunakan fungsi NewReader dari package encoding/csv kemu
 - Membaca baris per baris
 
 Untuk membaca satu baris file csv bisa menggunakan :
-```
+```go
 record, err := reader.Read()
 if err != nil {
 	log.Fatal(err)
@@ -82,7 +82,7 @@ hasil record nya berupa slice of string ([]string) yang dapat dibaca langsung me
 
 
 untuk membaca ke semua baris dapat menggunakan perulangan : 
-```
+```go
 for {
 	record, err := reader.Read()
 	if err == io.EOF {
@@ -102,7 +102,7 @@ for {
 
 Kita bisa menyimpan langsung ke database hasil dari record nya, berikut kode untuk membaca data dari csv dan langsung disimpan ke database (sebagai contoh kode berikut untuk membaca data quote anime) : 
 
-```
+```go
 package main
 
 import (
@@ -194,7 +194,7 @@ func print_record(records chan QuoteAnime) {
 Pembahasan potongan kode : 
 
 - Menyiapkan representasi dari dari csv 
-```
+```go
 type QuoteAnime struct {
 	Id        string
 	Anime     string
@@ -204,7 +204,7 @@ type QuoteAnime struct {
 ```
 
 - Menyiapkan koneksi ke database 
-```
+```go
 func getConnection() *sql.DB {
 	db, err := sql.Open("mysql", "root:@/namadatabase")
 	fatalErr(err)
@@ -217,7 +217,7 @@ func getConnection() *sql.DB {
 ```
 
 - Membuat fungsi untuk error handling agar tidak mengulang setiap ada error
-```
+```go
 func fatalErr(err error) {
 	if err != nil {
 		log.Fatal(err)
@@ -231,12 +231,12 @@ lanjut ke function main :
 - Membuat channel penampung data 
 
 karena kita akan membaca datanya secara asynchronus menggunakan goroutine jadi wajib membuat channel untuk transfer data nya
-```
+```go
 records := make(chan QuoteAnime)
 ```
 
 - Membuka file csv
-```
+```go
 file, err := os.Open("data.csv")
 fatalErr(err)
 ```
@@ -244,7 +244,7 @@ fatalErr(err)
 - Membuat goroutine
 
 untuk membuat goroutine-nya dapat menggunakan anonymous function seperti ini
-```
+```go
 go func(){
 
 }()
@@ -252,7 +252,7 @@ go func(){
 dan berikut di dalam goroutine-nya : 
 
 - Membuat reader csv 
-```
+```go
 reader := csv.NewReader(file)
 reader.Comma = ';'
 
@@ -261,7 +261,7 @@ defer close(records)
 `defer close(records)` untuk menutup channel jika program sudah selesai
 
 - Membaca data 
-```
+```go
 for{
 	r, err := reader.Read()
 	if err == io.EOF {
@@ -285,7 +285,7 @@ caranya sama seperti yang sudah dijelaskan di atas tetapi ada tambahan untuk men
 
 berikut isi dari function print_record : 
 - koneksi ke database dan menyiapkan query
-```
+```go
 db := getConnection()
 defer db.Close()
 
@@ -296,7 +296,7 @@ fatalErr(err)
 `db` diisi dengan function yang sudah dibuat di atas, kemudian `db.Prepare` untuk meyiapkan query ke database yang nanti nya bisa dengan mudah pada saat eksekusi
 
 - Menyimpan data dari channel ke database 
-```
+```go
 for record := range records {
 	_, err := stmt.Exec(record.Anime, record.Character, record.Quote)
 	fatalErr(err)
@@ -308,7 +308,7 @@ gunakan perulangan for..range untuk mengambil data satu-satu dari channel record
 
 
 ketika semua data berhasil disimpan terakhir akan menampilkan pesan
-```
+```go
 log.Println("Semua Data Berhasil Disimpan")
 ```
 data sudah berhasil disimpan ke database.
