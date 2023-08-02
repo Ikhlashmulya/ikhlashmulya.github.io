@@ -8,12 +8,15 @@ menu:
         - name: Contact
           url: /contact/
           weight: 30
-        - name: Article
-          url: /articles/
+        - name: Blog 
+          url: /blog/
           weight: 20
         - name: Projects
           url: /projects/
           weight: 15
+        - name: About
+          url: /about/
+          weight: 14
    
 
 
@@ -34,17 +37,17 @@ params:
         title: Ikhlash Mulya
         description: |
 
-          Hello, Saya Ikhlash Mulyanurahman. 
-        
+          Hello, Saya Ikhlash Mulyanurahman.
+
 
           Website ini berisi tulisan atau dokumentasi belajar saya.
         imageUrl: "/images/profile.png"
         imageTitle: my image
         imageWidth: 180
         imageHeight: 180
-        # buttons:
-        #     - name: Don't click me
-        #       url: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+        buttons:
+            - name: About Me 
+              url: /about/
     mainSections:
       - articles
 
