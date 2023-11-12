@@ -5,14 +5,14 @@ theme: charlola
 
 menu:
     main:
-        - name: Contact
-          url: mailto:nurahmanmulya@gmail.com
-          weight: 30
+        # - name: Contact
+        #   url: mailto:nurahmanmulya@gmail.com
+        #   weight: 30
         - name: Blog 
           url: /blog/
           weight: 20
         - name: Projects
-          url: https://github.com/Ikhlashmulya
+          url: /projects/
           weight: 15
         - name: About
           url: /about/
@@ -22,7 +22,7 @@ menu:
 
 params:
     author: Ikhlash Mulyanurahman
-    defaultTheme: auto
+    defaultTheme: dark
     # disableThemeToggle: true
     ShowShareButtons: true
     ShowReadingTime: true
@@ -41,13 +41,15 @@ params:
 
 
           Website ini berisi tulisan atau dokumentasi belajar saya.
-        imageUrl: "/images/profile.png"
+        imageUrl: "https://avatars.githubusercontent.com/u/94058040?v=4"
         imageTitle: my image
         imageWidth: 180
         imageHeight: 180
         buttons:
-            - name: About Me 
-              url: /about/
+            # - name: About Me 
+            #   url: /about/
+            - name: Contact Me
+              url: mailto:nurahmanmulya@gmail.com
     mainSections:
       - articles
 
@@ -56,16 +58,16 @@ params:
         #   url: "https://ko-fi.com/heycharlola"
         - name: github
           url: "https://github.com/ikhlashmulya"
-        # - name: linkedin
-        #   url: "https://www.linkedin.com/in/heycharlola/"
+        - name: linkedin
+          url: "www.linkedin.com/in/ikhlash-mulyanurahman"
 
       # add more social icons. find more in svg.html file
       # - name: youtube
       #   url: yoururl
-        # - name: instagram
-        #   url: https://instagram.com/mlyarhmn.exe 
-        # - name: twitter
-        #   url: https://twitter.com/imulyaa_
+        - name: instagram
+          url: https://instagram.com/ikhlashmulya_
+        - name: twitter
+          url: https://twitter.com/imulyaa_
         - name: facebook
           url: https://facebook.com/ikhlash.mulyanurahman.54
 
