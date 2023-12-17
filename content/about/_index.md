@@ -13,7 +13,8 @@ I am always eager to stay updated with the latest trends and technologies. I bel
 - **API Integration**: I have a wealth of experience in building and seamlessly integrating RESTful APIs, facilitating smooth communication between the frontend and backend. -->
 
 ### Connect with me
-- [linkedin](www.linkedin.com/in/ikhlash-mulyanurahman)
+- [linkedin](https://linkedin.com/in/ikhlash-mulyanurahman)
+- [github](https://github.com/ikhlashmulya)
 - [twitter](https://twitter.com/imulyaa_)
 - [facebook](https://facebook.com/ikhlash.mulyanurahman.54)
 - [instagram](https://instagram.com/ikhlashmulya_)
