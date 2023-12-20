@@ -21,6 +21,7 @@ menu:
 
 
 params:
+    env: production
     author: Ikhlash Mulyanurahman
     defaultTheme: dark
     # disableThemeToggle: true
@@ -79,6 +80,14 @@ params:
           favicon32x32: "/images/favicon-32x32.png"
           apple_touch_icon: "/images/apple-touch-icon.png"
           safari_pinned_tab: "/images/apple-touch-icon.png"
+
+    analytics:
+      google:
+        SiteVerificationTag: "sj7NoYA2uDLsBaKIHU-dZdyRBkNSgljZo1ZEPYL5jUg"
+      # bing:
+      #   SiteVerificationTag: "XYZabc"
+      # yandex:
+      #   SiteVerificationTag: "XYZabc"
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
