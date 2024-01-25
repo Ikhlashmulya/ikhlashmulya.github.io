@@ -4,13 +4,8 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        'me': "url('/images/me.jpeg')"
-      }
-    },
-  },
+  theme: {},
+  darkMode: 'class',
   // eslint-disable-next-line no-undef
   plugins: [require("daisyui")],
   daisyui: {
