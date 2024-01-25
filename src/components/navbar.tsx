@@ -20,16 +20,24 @@ export default function Navbar() {
           <li className="hidden md:flex">
             <NavLink to="/about" className={({isActive}) => isActive ? 'font-bold': ''}>About</NavLink>
           </li>
-          <li className="md:hidden">
+          <li className="md:hidden z-50">
             <details>
               <summary>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
               </summary>
               <ul className="p-2 bg-base-100 rounded-t-none">
-              <li><a>Home</a></li>
-              <li><a>Projects</a></li>
-              <li><a>Blog</a></li>
-              <li><a>About</a></li>
+              <li>
+                <NavLink to="/" className={({isActive}) => isActive ? 'font-bold': ''}>Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/project" className={({isActive}) => isActive ? 'font-bold': ''}>Project</NavLink>
+              </li>
+              <li>
+                <NavLink to="/blog" className={({isActive}) => isActive ? 'font-bold': ''}>Blog</NavLink>
+              </li>
+              <li>
+                <NavLink to="/about" className={({isActive}) => isActive ? 'font-bold': ''}>About</NavLink>
+              </li>
               </ul>
             </details>
           </li>

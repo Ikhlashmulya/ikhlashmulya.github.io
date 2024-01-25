@@ -1,6 +1,7 @@
 import { useEffect } from "react"
+import Card from "../components/card";
 
-interface project {
+export interface project {
   title: string;
   description: string;
   image: string;
@@ -39,20 +40,7 @@ export default function Project() {
       <h1 className="text-4xl font-bold my-10">Project</h1>
       <div className="flex flex-row flex-wrap">
         {projectData.map((data) => (
-          <div className="card w-60 bg-base-100 shadow-xl mx-[1.5px]">
-            <figure><img src={data.image} alt="Shoes" /></figure>
-            <div className="card-body">
-              <h2 className="card-title">
-                {data.title}
-              </h2>
-              <p>{data.description}</p>
-              <div className="card-actions justify-end">
-                {data.tag.map((dataTag) => (
-                  <div className="badge badge-outline pb-1">{dataTag}</div>
-                ))}
-              </div>
-            </div>
-          </div> 
+          <Card key={data.title} title={data.title} description={data.description} image={data.image} tag={data.tag} />
         ))}
       </div>
     </div>
