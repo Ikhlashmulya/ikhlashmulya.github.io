@@ -36,9 +36,9 @@ export default function Project() {
   ]
 
   return (
-    <div className="flex flex-col w-[60%] mx-auto mb-10">
+    <div className="flex flex-col lg:w-[60%] mx-auto mb-10">
       <h1 className="text-4xl font-bold my-10">Project</h1>
-      <div className="flex flex-row flex-wrap">
+      <div className="flex flex-row flex-wrap justify-center">
         {projectData.map((data) => (
           <Card key={data.title} title={data.title} description={data.description} image={data.image} tag={data.tag} />
         ))}

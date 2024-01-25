@@ -7,7 +7,7 @@ export default function Blog() {
   }, [])
 
   return (
-    <div className="min-h-screen flex flex-col w-[60%] mx-auto mb-10">
+    <div className="min-h-screen flex flex-col lg:w-[60%] mx-auto mb-10">
       <h1 className="text-4xl font-bold mb-5 mt-10">Blog</h1>
       <p className="text-lg">coming soon..</p><br />
     </div>
