@@ -33,7 +33,7 @@ export default function About() {
         <p className="text-lg mb-5">Here's the Technologies I've been working with recently</p>
         <div className="flex flex-row flex-wrap justify-center">
           {logo.map((value) => (
-            <div className="w-28 h-28 rounded-lg border-2 border-solid border-gray-600 p-1 m-1 hover:scale-105 hover:shadow-2xl">
+            <div className="lg:w-28 lg:h-28 w-24 h-24 rounded-lg border-2 border-solid border-gray-600 p-1 m-1 hover:scale-105 hover:shadow-2xl">
               <img src={value} />
             </div>
           ))}
