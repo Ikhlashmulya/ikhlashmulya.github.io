@@ -1,0 +1,74 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostsList from "../../components/PostsList.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const posts = (await getCollection("blog"))
+    .sort((a, b) => {
+      return b.data.pubDate.valueOf() - a.data.pubDate.valueOf();
+    })
+    .filter((post) => !post.data.planned);
+
+  // Generate pages from our array of astronauts, with 2 to a page
+  return paginate(posts, { pageSize: 3 });
+}
+
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props;
+---
+
+<BaseLayout title="All posts">
+  <h1 class="text-black dark:text-white pb-10 text-4xl">All Posts</h1>
+  <PostsList posts={page.data} />
+  <div class="mt-5 flex items-center">
+    {
+      page.url.prev ? (
+        <a
+          href={page.url.prev}
+          class="inline-flex items-center bg-slate-300 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-700 px-3 py-1.5 rounded-lg mr-3"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M7 16l-4-4m0 0l4-4m-4 4h18"
+            />
+          </svg>
+          <span class="ml-1 font-bold text-lg">Back</span>
+        </a>
+      ) : null
+    }
+    {
+      page.url.next ? (
+        <a
+          href={page.url.next}
+          class="inline-flex items-center bg-slate-300 dark:bg-slate-800 hover:bg-slate-400 dark:hover:bg-slate-700 px-3 py-1.5 rounded-lg"
+        >
+          <span class="mr-1 font-bold text-lg">Next</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            class="h-6 w-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"
+            />
+          </svg>
+        </a>
+      ) : null
+    }
+  </div>
+</BaseLayout>

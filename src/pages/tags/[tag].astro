@@ -1,0 +1,26 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PostsList from "../../components/PostsList.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
+  return tags.map((tag) => ({
+    params: { tag: tag.slice(1) },
+  }));
+}
+
+const { tag: t } = Astro.params;
+
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.tags.includes(`#${t}`))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title={`Posts about #${t?.toUpperCase()}`}>
+  <h1 class="text-black dark:text-white pb-10 uppercase font-black text-4xl">
+    {`#${t?.toUpperCase()}`}
+  </h1>
+  <PostsList posts={posts} />
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from "astro:content";
+import PostCard from "./PostCard.astro";
+
+export interface Props {
+  posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section>
+  <ul class="flex flex-col space-y-4">
+    {posts.map((post) => <li>{<PostCard post={post} />}</li>)}
+  </ul>
+</section>

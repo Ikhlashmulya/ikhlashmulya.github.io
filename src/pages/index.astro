@@ -1,0 +1,94 @@
+---
+import MdiTwitter from "~icons/mdi/twitter";
+import MdiGithub from "~icons/mdi/github";
+import MdiFb from "~icons/mdi/facebook";
+
+import PostsList from "../components/PostsList.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import SeriesList from "../components/SeriesList.astro";
+import { TWITTER_HANDLE, GITHUB_HANDLE } from "../consts";
+
+const posts = await getCollection("blog");
+
+const sortedPosts = posts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .filter((post) => !post.data.planned)
+  .slice(0, 3);
+
+const featuredPosts = posts.filter((post) => post.data.featured);
+
+const featuredProjects = (await getCollection("project")).filter((s) => s.data.featured);
+---
+
+<BaseLayout>
+  <div class="space-y-10">
+    <div class="space-y-4">
+      <h1 class="text-4xl text-black dark:text-white font-black">
+        Hi! I'm <span
+          class="underline underline-offset-2 decoration-fuchsia-600 dark:decoration-fuchsia-400 font-black"
+        >
+          Ikhlash Mulyanurahman</span
+        > 👋
+      </h1>
+      <p>
+        A passionate and dedicated software developer specializing in backend development. Follow my
+        journey into the world of backend development on this website I'll be sharing tutorials,
+        code snippets, and more!
+      </p>
+      <div class="space-x-1">
+        <a
+          href={GITHUB_HANDLE}
+          target="_blank"
+          class="inline-flex items-center justify-center space-x-2 py-2 px-3 rounded-md bg-slate-300 hover:bg-slate-400 dark:bg-slate-800 dark:hover:bg-slate-700"
+        >
+          <MdiGithub />
+          <span>GitHub</span>
+        </a>
+        <a
+          href={TWITTER_HANDLE}
+          target="_blank"
+          class="inline-flex items-center justify-center space-x-2 py-2 px-3 rounded-md bg-slate-300 hover:bg-slate-400 dark:bg-slate-800 dark:hover:bg-slate-700"
+        >
+          <MdiFb />
+          <span>Facebook</span>
+        </a>
+      </div>
+    </div>
+    {
+      featuredPosts.length > 0 && (
+        <div class="space-y-5">
+          <h1 class="text-3xl text-black dark:text-white">Featured Posts</h1>
+          <PostsList posts={featuredPosts} />
+        </div>
+      )
+    }
+    <div class="space-y-5">
+      <div class="flex items-center justify-between space-x-2">
+        <h1 class="text-3xl text-black dark:text-white">Latest Posts</h1>
+        <a
+          href="/blog"
+          class="inline-flex items-center justify-center py-0.5 px-3 bg-blue-600 hover:bg-blue-800 rounded-full text-sm text-white"
+          >View all</a
+        >
+      </div>
+      <PostsList posts={sortedPosts} />
+    </div>
+    {
+      featuredProjects.length > 0 && (
+        <div class="space-y-5">
+          <div class="flex items-center justify-between space-x-2">
+            <h1 class="text-3xl text-black dark:text-white">Featured Projects</h1>
+            <a
+              href="/projects"
+              class="inline-flex items-center justify-center py-0.5 px-3 bg-blue-600 hover:bg-blue-800 rounded-full text-sm text-white"
+            >
+              View all
+            </a>
+          </div>
+          <SeriesList series={featuredProjects} />
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Righteous";
+  src: url("/fonts/Righteous.eot");
+  src:
+    url("/fonts/Righteous.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Righteous.woff2") format("woff2"),
+    url("/fonts/Righteous.woff") format("woff"),
+    url("/fonts/Righteous.ttf") format("truetype"),
+    url("/fonts/Righteous.svg#Righteous") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+figure[data-rehype-pretty-code-figure] {
+  @apply space-y-0;
+}
+
+figure[data-rehype-pretty-code-figure] pre {
+  @apply p-0 py-2 rounded-t-none rounded-lg overflow-x-auto bg-slate-950;
+}
+
+figure[data-rehype-pretty-code-figure] code {
+  counter-reset: line;
+}
+
+span[data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+  @apply px-3 border-l-4 border-transparent text-slate-400;
+}
+
+span[data-line] {
+  @apply flex;
+}
+
+span[data-highlighted-line]::before {
+  @apply border-blue-400;
+}
+
+span[data-highlighted-line] {
+  @apply bg-blue-400/20;
+}

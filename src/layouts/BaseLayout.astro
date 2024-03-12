@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  postMeta?: {
+    pubDate: Date;
+    tags: string[];
+  };
+}
+
+const { title, description, postMeta } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="font-sans">
+  <head>
+    <BaseHead title={title} description={description} postMeta={postMeta} />
+  </head>
+  <body
+    class="relative container mx-auto md:max-w-4xl px-4 space-y-10 flex flex-col justify-between h-screen text-slate-700 bg-slate-100 dark:text-slate-300 dark:bg-slate-900"
+  >
+    <Header />
+    <main class="flex-grow pt-20">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
