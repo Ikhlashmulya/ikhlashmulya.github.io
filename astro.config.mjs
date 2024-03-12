@@ -9,7 +9,7 @@ import Icons from "unplugin-icons/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://ikhlashmulya.github.io",
   integrations: [mdx(), sitemap(), tailwind(), preact()],
   markdown: {
     extendDefaultPlugins: true,
