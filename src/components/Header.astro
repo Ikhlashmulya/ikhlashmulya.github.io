@@ -27,13 +27,13 @@ const currentPath = pathname.slice(1); // remove the first "/"
         href="/blog/1">blog</a
       >
       <a
-        class={currentPath == "projects"
+        class={currentPath.startsWith("projects")
           ? "mr-3 underline underline-offset-2 decoration-fuchsia-600 dark:decoration-fuchsia-400 font-black"
           : "mr-3"}
         href="/projects">projects</a
       >
       <a
-        class={currentPath == "about"
+        class={currentPath.startsWith("about")
           ? "mr-3 underline underline-offset-2 decoration-fuchsia-600 dark:decoration-fuchsia-400 font-black"
           : "mr-3"}
         href="/about">about</a
