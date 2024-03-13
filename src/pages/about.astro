@@ -1,20 +1,19 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 
 const logos = [
-  "/src/assets/golang.png",
-  "/src/assets/nodejs.png",
-  "/src/assets/typescript.png",
-  "/src/assets/express.png",
-  "/src/assets/php.png",
-  "/src/assets/laravel.png",
-  "/src/assets/mysql.png",
-  "/src/assets/postgre.png",
-  "/src/assets/java.png",
-  "/src/assets/spring.png",
-  "/src/assets/docker.png",
+  "/image/golang.png",
+  "/image/nodejs.png",
+  "/image/typescript.png",
+  "/image/express.png",
+  "/image/php.png",
+  "/image/laravel.png",
+  "/image/mysql.png",
+  "/image/postgre.png",
+  "/image/java.png",
+  "/image/spring.png",
 ];
 ---
 
@@ -22,7 +21,7 @@ const logos = [
   <h1 class="text-black dark:text-white pb-10 text-4xl">Who am I?</h1>
   <div class="flex flex-col items-center lg:flex-row mb-10">
     <Image
-      src="/src/assets/pp.jpeg"
+      src="/image/pp.jpeg"
       alt="photos"
       width="200"
       height="200"
