@@ -6,7 +6,7 @@ import SeriesList from "../components/ProjectList.astro";
 const series = await getCollection("project");
 ---
 
-<BaseLayout title="All series">
+<BaseLayout title="All projects">
   <h1 class="text-black dark:text-white text-4xl pb-10">All Projects</h1>
   <SeriesList series={series} />
 </BaseLayout>
