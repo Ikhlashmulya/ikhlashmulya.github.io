@@ -1,12 +1,11 @@
 ---
-import MdiTwitter from "~icons/mdi/twitter";
 import MdiGithub from "~icons/mdi/github";
 import MdiFb from "~icons/mdi/facebook";
 
 import PostsList from "../components/PostsList.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
-import SeriesList from "../components/SeriesList.astro";
+import SeriesList from "../components/ProjectList.astro";
 import { TWITTER_HANDLE, GITHUB_HANDLE } from "../consts";
 
 const posts = await getCollection("blog");

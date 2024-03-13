@@ -6,6 +6,7 @@
     "jsxImportSource": "preact",
     "types": [
       "unplugin-icons/types/preact"
-    ]
+    ],
+    "verbatimModuleSyntax": true
   }
 }

@@ -1,7 +1,7 @@
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  series: CollectionEntry<"series">;
+  series: CollectionEntry<"project">;
 }
 
 export default function ({ series }: Props) {

@@ -1,9 +1,9 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import AstroSeriesCard from "./SeriesCard.astro";
+import AstroSeriesCard from "./ProjectCard.astro";
 
 export interface Props {
-  series: CollectionEntry<"series">[];
+  series: CollectionEntry<"project">[];
 }
 
 const { series } = Astro.props;
