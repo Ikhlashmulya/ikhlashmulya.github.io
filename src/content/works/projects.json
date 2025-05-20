@@ -1,6 +1,14 @@
 [
   {
-    "title": "NodeJS starter Rest API",
-    "link": "https://github.com/Ikhlashmulya/nodejs-starter-rest-api"
+    "title": "Story App",
+    "link": "https://github.com/Ikhlashmulya/story-app-js",
+    "description": "Submission for dicoding belajar web intermediete",
+    "image": "/images/story-app.png"
+  },
+  {
+    "title": "Portfolio Web",
+    "link": "https://ikhlashmulya.github.io",
+    "description": "Website for my portfolio",
+    "image": "/images/portfolio-web.png"
   }
 ]
