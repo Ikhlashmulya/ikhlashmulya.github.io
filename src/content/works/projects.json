@@ -1,14 +1,26 @@
 [
   {
-    "title": "Story App",
-    "link": "https://github.com/Ikhlashmulya/story-app-js",
-    "description": "Submission for dicoding belajar web intermediete",
-    "image": "/images/story-app.png"
+    "title": "Ansaju BE API",
+    "link": "https://github.com/ansaju-org/ansaju-be",
+    "description": "Backend application for smart recommendation system that helps students choose the right college major",
+    "image": "/images/github-logo-vector.webp"
+  },
+  {
+    "title": "Golang Clean Architecture",
+    "link": "https://github.com/Ikhlashmulya/golang-clean-architecture",
+    "description": "Implementing clean architecture principle in golang",
+    "image": "/images/github-logo-vector.webp"
   },
   {
     "title": "Portfolio Web",
     "link": "https://ikhlashmulya.github.io",
     "description": "Website for my portfolio",
     "image": "/images/portfolio-web.png"
+  },
+  {
+    "title": "Story App",
+    "link": "https://github.com/Ikhlashmulya/story-app-js",
+    "description": "Submission for dicoding belajar web intermediete",
+    "image": "/images/story-app.png"
   }
 ]
