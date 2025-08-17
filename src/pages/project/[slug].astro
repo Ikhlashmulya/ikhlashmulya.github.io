@@ -1,0 +1,61 @@
+---
+import type { GetStaticPaths, MDXInstance } from "astro";
+import "../../styles/markdown.css";
+import type { Frontmatter } from "../../types/frontmatter";
+import BaseLayout from "../../layouts/baseLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const projects = await Astro.glob<Frontmatter>("../../content/works/**/*.md") as unknown as MDXInstance<Frontmatter>[];
+  return projects.map((project) => ({
+    params: {
+      slug: project.frontmatter.slug
+    },
+    props: {
+      project
+    }
+  }))
+}) satisfies GetStaticPaths;
+
+const {Content, frontmatter} = Astro.props.project;
+---
+
+<BaseLayout title={"Blog | " + frontmatter.title}>
+  <h1 class="text-2xl font-bold mt-5 mb-5">{frontmatter.title}</h1>
+  <div class="markdown text-justify">
+    <Content />
+    <button
+      id="to-top-button"
+      title="Go To Top"
+      class="hidden fixed z-50 bottom-10 right-10 p-4 border-0 w-14 h-14 rounded-full shadow-md bg-purple-600 hover:bg-purple-700 text-white text-lg font-semibold transition-colors duration-300"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="w-6 h-6"
+      >
+        <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"></path>
+      </jvg>
+      <span class="sr-only">Go to top</span>
+    </button>
+  </div>
+</BaseLayout>
+<script is:inline>
+  window.onscroll = function () {
+    if (
+      document.body.scrollTop > 500 ||
+      document.documentElement.scrollTop > 500
+    ) {
+      document.getElementById("to-top-button").classList.remove("hidden");
+    } else {
+      document.getElementById("to-top-button").classList.add("hidden");
+    }
+  };
+
+  document.getElementById("to-top-button").addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+</script>

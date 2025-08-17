@@ -1,0 +1,28 @@
+---
+import { getEntry } from "astro:content";
+import ProjectCard from "../../components/projectCard.astro";
+import BaseLayout from "../../layouts/baseLayout.astro";
+import type { Frontmatter } from "../../types/frontmatter";
+const projects = await Astro.glob<Frontmatter>("../../content/works/**/*.md");
+projects.sort((a, b) =>
+  Date.parse(a.frontmatter.date) < Date.parse(b.frontmatter.date) ? 1 : -1
+);
+---
+
+<BaseLayout title="Project">
+    <h2 class="mt-5 font-bold text-2xl">Projects</h2>
+    <div class="mt-5 mb-20 grid grid-cols-1 md:grid-cols-2 gap-3">
+        {
+            projects.map((project) => {
+                return (
+                    <ProjectCard
+                        title={project.frontmatter.title}
+                        link={"/project/" + project.frontmatter.slug}
+                        description={project.frontmatter.description}
+                        image={project.frontmatter.image}
+                    />
+                );
+            })
+        }
+    </div>
+</BaseLayout>
