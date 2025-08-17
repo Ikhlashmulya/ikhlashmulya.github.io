@@ -21,14 +21,15 @@ key feature:
 
 screenshot :
 
-<div class="grid grid-cols-3">
-<img src="/images/mindful-screenshot/screenshot-1.jpeg" alt="screenshot" style="width:200px;"/>
-<img src="/images/mindful-screenshot/screenshot-2.jpeg" alt="screenshot" style="width:200px;"/>
-<img src="/images/mindful-screenshot/screenshot-3.jpeg" alt="screenshot" style="width:200px;"/>
-<img src="/images/mindful-screenshot/screenshot-4.jpeg" alt="screenshot" style="width:200px;"/>
-<img src="/images/mindful-screenshot/screenshot-5.jpeg" alt="screenshot" style="width:200px;"/>
-<img src="/images/mindful-screenshot/screenshot-6.jpeg" alt="screenshot" style="width:200px;"/>
-<img src="/images/mindful-screenshot/screenshot-7.jpeg" alt="screenshot" style="width:200px;"/>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div><img src="/images/mindful-screenshot/screenshot-1.jpeg" class="w-full rounded-lg" alt="screenshot" /></div>
+  <div><img src="/images/mindful-screenshot/screenshot-2.jpeg" class="w-full rounded-lg" alt="screenshot" /></div>
+  <div><img src="/images/mindful-screenshot/screenshot-3.jpeg" class="w-full rounded-lg" alt="screenshot" /></div>
+  <div><img src="/images/mindful-screenshot/screenshot-4.jpeg" class="w-full rounded-lg" alt="screenshot" /></div>
+  <div><img src="/images/mindful-screenshot/screenshot-5.jpeg" class="w-full rounded-lg" alt="screenshot" /></div>
+  <div><img src="/images/mindful-screenshot/screenshot-6.jpeg" class="w-full rounded-lg" alt="screenshot" /></div>
+  <div><img src="/images/mindful-screenshot/screenshot-7.jpeg" class="w-full rounded-lg" alt="screenshot" /></div>
 </div>
+
 
 
