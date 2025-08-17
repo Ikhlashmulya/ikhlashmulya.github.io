@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-img[alt=screenshot] { 
-  width: 200px;
-  padding-bottom: 1rem;
-}
 
 .markdown {
   line-height: 28px;
