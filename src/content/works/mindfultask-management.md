@@ -16,7 +16,7 @@ key feature:
 - ✅ Pengukuran Stres – ukur level stresmu secara berkala, biar bisa lebih sadar sama kondisi mental sendiri.
 
 <div className="flex items-center justify-center mb-20">
-<a class="p-2 bg-purple-800 rounded" style="color: #e3e1e1" href="https://expo.dev/artifacts/eas/npJegMDHjaJUhrMBCz7L2r.apk">Download</a>
+<a class="p-2 bg-purple-800 rounded" style="color: #e3e1e1" href="https://expo.dev/artifacts/eas/tvMrMRuoXhCbAfCH29AM3t.apk">Download</a>
 </div>
 
 screenshot :
