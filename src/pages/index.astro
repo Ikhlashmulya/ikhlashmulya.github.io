@@ -1,32 +1,21 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>👋 Hi, There!</h1>
-      <p>
-        I'm Ikhlash Mulyanurahman A passionate and dedicated web developer
-        specializing in backend development. With a keen interest in creating
-        efficient and scalable solutions, I take pride in ensuring
-        high-performance and reliable applications.
-      </p>
-      <p>
-        I am always eager to stay updated with the latest trends and
-        technologies. I believe in continuous learning and improvement to
-        deliver cutting-edge solutions. On good days, I love to explore about
-        technology especially on programming.
-      </p>
-    </main>
-    <Footer />
-  </body>
-</html>
+<BaseLayout>
+  <main class="prose lg:prose-xl prose-h1:mb-1">
+    <h1>👋 Hi, There!</h1>
+    <p>
+      I'm Ikhlash Mulyanurahman A passionate and dedicated web developer
+      specializing in backend development. With a keen interest in creating
+      efficient and scalable solutions, I take pride in ensuring
+      high-performance and reliable applications.
+    </p>
+    <p>
+      I am always eager to stay updated with the latest trends and technologies.
+      I believe in continuous learning and improvement to deliver cutting-edge
+      solutions. On good days, I love to explore about technology especially on
+      programming.
+    </p>
+  </main>
+</BaseLayout>
