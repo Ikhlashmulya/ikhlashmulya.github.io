@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ryoGif from "../assets/ryo.webp";
+import { Image } from "astro:assets";
 ---
 
 <BaseLayout>
@@ -21,8 +22,8 @@ import ryoGif from "../assets/ryo.webp";
       </p>
     </div>
     <div class="flex-none flex justify-center">
-      <img
-        src={ryoGif.src}
+      <Image
+        src={ryoGif}
         width={ryoGif.width}
         height={ryoGif.height}
         alt="ryo yamada"
