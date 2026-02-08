@@ -10,7 +10,7 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <BaseLayout>
-  <main class="pt-8 px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-3">
+  <main class="py-8 px-4 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-3">
     {
       posts.map((post) => (
         <a href={`/blog/${post.id}/`}>
