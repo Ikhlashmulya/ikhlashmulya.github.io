@@ -1,11 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ryoGif from "../assets/ryo.webp";
+import youchanGif from "../assets/youchan.webp";
 import { Image } from "astro:assets";
 ---
 
 <BaseLayout>
-  <main class="prose prose-lg md:prose-xl max-w-none flex flex-col-reverse md:flex-row px-4 md:px-8">
+  <main class="prose prose-lg md:prose-xl max-w-none flex flex-col-reverse md:flex-row px-4 md:px-8 gap-0 md:gap-2">
     <div class="flex-1">
       <h2>👋 Hi, There!</h2>
       <p>
@@ -23,10 +23,10 @@ import { Image } from "astro:assets";
     </div>
     <div class="flex-none flex justify-center">
       <Image
-        src={ryoGif}
-        width={ryoGif.width}
-        height={ryoGif.height}
-        alt="ryo yamada"
+        src={youchanGif}
+        width={youchanGif.width}
+        height={youchanGif.height}
+        alt="Youchan Hi!!"
       />
     </div>
   </main>
