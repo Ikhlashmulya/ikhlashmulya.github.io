@@ -14,16 +14,18 @@ const posts = (await getCollection("blog")).sort(
     {
       posts.map((post) => (
         <a href={`/blog/${post.id}/`}>
-          <div class="shadow-lg rounded-md border border-gray-300 overflow-hidden">
+          <div class="overflow-hidden">
             {post.data.heroImage && (
-              <Image
-                width={720}
-                height={360}
-                src={post.data.heroImage}
-                alt=""
-                class="object-cover"
-                loading="lazy"
-              />
+              <div class="overflow-hidden rounded-lg">
+                <Image
+                  width={720}
+                  height={360}
+                  src={post.data.heroImage}
+                  alt=""
+                  class="object-cover transition-transform duration-500 ease-in-out hover:scale-125"
+                  loading="lazy"
+                />
+              </div>
             )}
             <div class="px-1">
               <h3 class="text-lg md:text-xl font-semibold">
