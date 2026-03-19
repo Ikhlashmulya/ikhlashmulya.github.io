@@ -2,9 +2,10 @@
 const today = new Date();
 ---
 
-<footer>
+<div class="bg-gray-300 w-[80%] h-[1px] mx-auto mt-10 mb-8"></div>
+<footer class="flex items-center flex-col prose prose-lg md:prose-xl max-w-none">
   &copy; {today.getFullYear()} Ikhlashmulya. All rights reserved.
-  <div class="social-links">
+  <div class="not-prose flex gap-5 text-gray-600 my-3">
     <a
       href="https://www.linkedin.com/in/ikhlash-mulyanurahman/"
       target="_blank"
@@ -50,24 +51,3 @@ const today = new Date();
     </a>
   </div>
 </footer>
-<style>
-  footer {
-    padding: 2em 1em 6em 1em;
-    background: linear-gradient(var(--gray-gradient)) no-repeat;
-    color: rgb(var(--gray));
-    text-align: center;
-  }
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-    margin-top: 1em;
-  }
-  .social-links a {
-    text-decoration: none;
-    color: rgb(var(--gray));
-  }
-  .social-links a:hover {
-    color: rgb(var(--gray-dark));
-  }
-</style>
