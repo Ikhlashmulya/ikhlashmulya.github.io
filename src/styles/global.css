@@ -95,8 +95,8 @@ a:hover {
 }
 p {
 	margin-bottom: 1em;
-} */
-/* .prose p {
+}
+.prose p {
 	margin-bottom: 2em;
 }
 textarea {
@@ -158,3 +158,9 @@ hr {
 	clip-path: inset(50%);
 	white-space: nowrap;
 } */
+
+.prose {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+}
