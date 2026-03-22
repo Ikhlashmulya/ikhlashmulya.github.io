@@ -14,29 +14,36 @@ const posts = (await getSortedPosts()).slice(0, 3);
         <h2>👋 Hi, There!</h2>
         <p>
           I'm Ikhlash Mulyanurahman A passionate and dedicated web developer
-          specializing in backend development. With a keen interest in creating
-          efficient and scalable solutions, I take pride in ensuring
-          high-performance and reliable applications.
+          specializing in backend development. I am always eager to stay updated with the latest technologies and I really enjoy exploring new things in programming.
         </p>
         <p>
-          I am always eager to stay updated with the latest trends and
-          technologies. I believe in continuous learning and improvement to
-          deliver cutting-edge solutions. On good days, I love to explore about
-          technology especially on programming.
+          Outside of Programming, I am a complete fan of music and anime. You'll probably find me recharging with my favorite Anime, exploring new sounds in Music, or diving into a side Programming project.
+          To me, a "good day" is a mix of clean code, a great playlist, and maybe a few episodes of my current favorite series.
         </p>
       </section>
       <section class="flex-none flex justify-center">
-        <Image src={youchanGif} alt="Youchan Hi!!" />
+        <Image
+          src={youchanGif}
+          alt="Youchan Hi!!"
+          class="w-100 h-100 object-cover"
+        />
       </section>
     </div>
     <div>
       <h3>Recent Posts</h3>
-      <p>Actually, I dont write blog regularly but here are some of my latest posts.</p>
+      <p>
+        Actually, I dont write blog regularly but here are some of my latest
+        posts.
+      </p>
       <PostList posts={posts} />
     </div>
     <div>
       <h3>Playlists</h3>
-      <p>Background processes that keep my focus at 100%. From Lo-Fi to high-energy tracks, here's what I'm bumping in my headphones while I'm coding.  </p>
+      <p>
+        Background processes that keep my focus at 100%. From Lo-Fi to
+        high-energy tracks, here's what I'm bumping in my headphones while I'm
+        coding.
+      </p>
       <section class="grid grid-cols-1 md:grid-cols-2 gap-5">
         <iframe
           style="border-radius:12px"
