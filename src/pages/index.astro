@@ -2,7 +2,6 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import youchanGif from "../assets/youchan.webp";
 import { Image } from "astro:assets";
-import FormattedDate from "../components/FormattedDate.astro";
 import { getSortedPosts } from "../utils";
 import PostList from "../components/PostList.astro";
 const posts = (await getSortedPosts()).slice(0, 3);
@@ -32,7 +31,28 @@ const posts = (await getSortedPosts()).slice(0, 3);
     </div>
     <div>
       <h3>Recent Posts</h3>
+      <p>Actually, I dont write blog regularly but here are some of my latest posts.</p>
       <PostList posts={posts} />
+    </div>
+    <div>
+      <h3>Playlists</h3>
+      <p>Background processes that keep my focus at 100%. From Lo-Fi to high-energy tracks, here's what I'm bumping in my headphones while I'm coding.  </p>
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/0ApQqVEHjwjOm4xMGraAhk?utm_source=generator"
+          height="352"
+          width="100%"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/playlist/0gZRQX42mwGfiQPwgKt1r5?utm_source=generator"
+          height="352"
+          width="100%"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+      </section>
     </div>
   </main>
 </BaseLayout>
