@@ -1,3 +1,15 @@
+import { navigateTo, router } from './routes'
 import './style.css'
 
-document.querySelector('#app').innerHTML = `<h2>Hello World!</h2>`
+document.addEventListener("click", (e) => {
+  if (e.target.matches("[data-link]")) {
+    e.preventDefault();
+    navigateTo(e.target.href);
+  }
+});
+
+window.addEventListener("popstate", () => {
+    router();
+})
+
+router();

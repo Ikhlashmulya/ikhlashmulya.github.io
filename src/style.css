@@ -5,3 +5,13 @@ body {
 h2 {
   color: #fff;
 }
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+
+}
