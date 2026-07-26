@@ -1,5 +1,5 @@
-import { navigateTo, router } from './routes'
-import './style.css'
+import { navigateTo, router } from './routes';
+import './style.css';
 
 document.addEventListener("click", (e) => {
   if (e.target.matches("[data-link]")) {
@@ -10,6 +10,12 @@ document.addEventListener("click", (e) => {
 
 window.addEventListener("popstate", () => {
     router();
-})
+});
 
-router();
+const redirect = sessionStorage.redirect;
+if (redirect) {
+    sessionStorage.removeItem("redirect");
+    navigateTo(redirect);
+} else {
+    router();
+}
