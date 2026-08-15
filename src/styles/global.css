@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Pacifico&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-pacifico: "Pacifico", cursive;
+    --color-base: #eff1f5;
+    --color-dark-base: #1e1e2e;
+    --color-text: #4c4f69;
+    --color-dark-text: #cdd6f4;
+}
+
+h1, h2, h3 {
+    font-family: "Pacifico", cursive;
+}

@@ -1,3 +1,8 @@
+---
+import Navbar from '../components/Navbar.astro';
+import '../styles/global.css';
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,12 +13,21 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
-	<body>
-		<slot />
+	<body class="bg-base dark:bg-dark-base dark:text-dark-text text-text">
+		<main class="mx-auto w-[90%] md:w-[50%] pt-5">
+			<Navbar />
+			<slot />
+		</main>
 	</body>
 </html>
 
 <style>
+	h1, h2, h3 {
+		font-family: "Pacifico", cursive;
+		font-weight: 400;
+		font-style: normal;
+	}
+
 	html,
 	body {
 		margin: 0;
